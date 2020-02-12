@@ -1,0 +1,24 @@
+@import "variables";
+
+body {
+  font-family: 'Pribambas';
+}
+
+h1, h2, h3, h4, h5, p {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cutPaper {
+  background-image: url($imgPath + 'cut-paper.png');
+  background-position: bottom;
+  background-size: cover;
+  padding: 30px 40px 40px;
+}

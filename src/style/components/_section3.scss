@@ -1,0 +1,28 @@
+@import "variables";
+
+.third {
+  background-size: contain;
+  background-repeat: repeat;
+  background-image: url($imgPath + 'bg-lines.png');
+  overflow: hidden;
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    top: calc(100% - 100px);
+    left: 0;
+    width: 100%;
+    height: 50vh;
+    background-image: url($imgPath + 'cut-paper.png');
+    background-position: top;
+    z-index: 0;
+  }
+
+  .cutPaper {
+    min-height: 5vh;
+  }
+
+  &_wrap {
+    padding: 0 130px;
+  }
+}

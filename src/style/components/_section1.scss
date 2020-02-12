@@ -1,0 +1,154 @@
+@import "variables";
+
+.first {
+  background-image: url($imgPath + 'bg.jpg');
+  overflow: hidden;
+  position: relative;
+  &_grid {
+    display: grid;
+    grid-template-columns: 27vw 1fr 25vw;
+    grid-template-rows: 50vh;
+    padding: 40px;
+    grid-gap: 20px;
+    grid-template-areas: "one two three";
+    @media screen and (max-width: 980px){
+      grid-template-columns: 20vw 1fr 17vw;
+      grid-template-rows: auto;
+    }
+    @media screen and (max-width: 768px){
+      grid-template-columns: 50vw 1fr;
+      grid-template-areas: "one three" "two two";
+      grid-template-rows: auto;
+    }
+
+    .one {grid-area: one; z-index: 1;}
+    .two {
+      grid-area: two;
+      z-index: 1;
+      .toggle {
+        &_sale {
+          animation: 1.8s linear infinite fadeIn;
+        }
+        &_by {
+          animation: 1.8s linear infinite fadeOut;
+        }
+      }
+    }
+    .three {grid-area: three; z-index: 1;}
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    svg {
+      @media screen and (max-width: 980px){
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+
+  &_sausage {
+    width: 100%;
+    &__left, &__right {
+      position: absolute;
+      img {
+        width: 100%;
+        height: auto;
+        @media screen and (max-width: 768px){
+          width: 100px;
+        }
+      }
+    }
+    &__left {
+      left: 10vw;
+      bottom: 100vh;
+      animation-fill-mode: backwards;
+      animation: 2s ease-in-out infinite sausageAnimationLeft;
+    }
+    &__right {
+      right: 10vw;
+      bottom: calc(100vh + 500px);
+      animation-fill-mode: backwards;
+      animation: 2.4s ease-in-out infinite sausageAnimationRight;
+    }
+  }
+}
+
+@keyframes sausageAnimationLeft {
+  0% {
+    transform: rotate(0);
+    bottom: 110vh;
+  }
+  20% {
+    transform: rotate(25deg);
+    bottom: 70vh;
+  }
+  40% {
+    transform: rotate(25deg);
+    bottom: 30vh;
+  }
+  60% {
+    transform: rotate(45deg);
+    bottom: 10vh;
+  }
+  80% {
+    transform: rotate(60deg);
+    bottom: -10%;
+  }
+  100% {
+    transform: rotate(90deg);
+    bottom: -50%;
+  }
+}
+@keyframes sausageAnimationRight {
+  0% {
+    transform: rotate(0deg);
+    bottom: 100vh;
+  }
+  20% {
+    transform: rotate(-40deg);
+    bottom: 70vh;
+  }
+  40% {
+    transform: rotate(-55deg);
+    bottom: 45vh;
+  }
+  60% {
+    transform: rotate(-60deg);
+    bottom: 10vh;
+  }
+  80% {
+    transform: rotate(-80deg);
+    bottom: -10%;
+  }
+  100% {
+    transform: rotate(-100deg);
+    bottom: -50%;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

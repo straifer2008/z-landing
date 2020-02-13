@@ -16,13 +16,227 @@
     background-image: url($imgPath + 'cut-paper.png');
     background-position: top;
     z-index: 0;
+    @media screen and (max-width: $sm){
+      top: calc(100% - 50px);
+    }
   }
 
   .cutPaper {
     min-height: 5vh;
+    @media screen and (max-width: $sm){
+      min-height: 50px;
+      padding: 0;
+    }
   }
 
   &_wrap {
+    z-index: 1;
     padding: 0 130px;
+    max-height: calc(100vh - 230px);
+    overflow: hidden;
+    @media screen and (max-width: $sm){
+      padding: 0 20px;
+      max-height: calc(100vh - 100px);
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 0;
+      li {
+        list-style: none;
+        padding: 40px 0;
+        display: flex;
+        flex-direction: column;
+        @media screen and (max-width: $lg){
+          padding: 20px 0;
+        }
+        @media screen and (max-width: $xs){
+          padding: 10px 0;
+          &:last-child {
+            padding: 0;
+          }
+        }
+
+        &.toggle {
+          a {
+            display: flex;
+            align-items: center;
+            &:after {
+              margin-left: 10px;
+              display: block;
+              content: '';
+              background-image: url($imgPath + 'mark.svg');
+              background-repeat: no-repeat;
+              background-size: contain;
+              background-position: center;
+              width: 60px;
+              height: 60px;
+              @media screen and (max-width: $sm){
+                width: 30px;
+                height: 30px;
+              }
+            }
+            &.active {
+              &:after {
+                transform: scaleY(-1);
+              }
+            }
+          }
+        }
+      }
+
+      .title {
+        font-size: 75px;
+        color: #000;
+        text-decoration: none;
+        @media screen and (max-width: 1020px){
+          font-size: 50px;
+        }
+
+        @media screen and (max-width: $sm){
+          font-size: 30px;
+        }
+      }
+
+      .content {
+        margin-top: 60px;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #000000;
+        @media screen and (max-width: $sm){
+          flex-direction: column;
+        }
+
+        @media screen and (max-width: $xs){
+          flex-direction: row;
+        }
+
+        img {
+          margin-right: 20px;
+          max-width: 130px;
+          height: auto;
+          @media screen and (max-width: $sm){
+            max-width: 100px;
+            margin-right: 0;
+            margin-bottom: 10px;
+          }
+          @media screen and (max-width: $xs){
+            margin-bottom: 0;
+            margin-right: 10px;
+            max-width: 60px;
+          }
+        }
+
+        &_text {
+          font-size: 35px;
+          color: #000;
+          text-decoration: none;
+          @media screen and (max-width: $lg){
+            font-size: 20px;
+          }
+          @media screen and (max-width: $xs){
+            font-size: 14px;
+          }
+
+          &__bold {
+            font-size: 40px;
+            @media screen and (max-width: $lg){
+              font-size: 25px;
+            }
+            @media screen and (max-width: $xs){
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+
+    .toggle_wrap {
+      height: calc(100vh - 300px);
+      display: none;
+      @media screen and (max-width: $sm){
+        height: calc(100vh - 200px);
+        overflow-y: auto;
+        p {
+          font-size: 12px;
+        }
+      }
+      &.active {
+        display: block;
+      }
+    }
+
+    form {
+      margin-top: 40px;
+      display: none;
+      grid-template-columns: repeat(3, 1fr);
+      height: calc(100vh - 403px);
+      grid-row-gap: 60px;
+      grid-column-gap: 60px;
+      align-content: start;
+      @media screen and (max-width: $lg){
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 20px;
+        grid-column-gap: 20px;
+      }
+
+      @media screen and (max-width: $sm){
+        height: calc(100vh - 200px);
+      }
+
+      &.active {
+        display: grid;
+      }
+
+      .field {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        label {
+          text-transform: uppercase;
+          margin-bottom: 10px;
+          font-size: 50px;
+          @media screen and (max-width: 1400px){
+            font-size: 40px;
+          }
+          @media screen and (max-width: 980px){
+            font-size: 30px;
+          }
+          @media screen and (max-width: $xs){
+            font-size: 16px;
+          }
+        }
+
+        input, select {
+          width: 100%;
+          box-shadow: 0 0 3px rgba(0,0,0,.3) inset;
+          outline: none;
+          border: none;
+          box-sizing: border-box;
+          border-radius: 20px;
+          padding: 10px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          @media screen and (max-width: $xs){
+            height: 30px;
+            padding: 5px 10px;
+          }
+        }
+      }
+
+      .btn {
+        align-self: flex-end;
+        @media screen and (max-width: $xs){
+          font-size: 16px;
+          height: 30px;
+        }
+      }
+    }
   }
 }

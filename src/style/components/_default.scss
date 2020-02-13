@@ -22,3 +22,28 @@ h1, h2, h3, h4, h5, p {
   background-size: cover;
   padding: 30px 40px 40px;
 }
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  box-shadow: none;
+  background-color: #625f5b;
+  color: #e8e0d3;
+  font-size: 30px;
+  border: none;
+  font-family: 'Pribambas', sans-serif;
+  height: 40px;
+  text-align: center;
+  border-radius: 20px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.text {
+  &-bold {
+    font-weight: bold;
+  }
+}

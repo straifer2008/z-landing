@@ -110,15 +110,78 @@
     <div class="container third">
       <div class="cutPaper"></div>
       <div class="third_wrap">
-        <h2>реєстрація на акцію</h2>
-        <h2>офіційні правила акції</h2>
-        <h2>діліться враженнями</h2>
+        <ul class="third_wrap__list">
+          <li class="toggle">
+            <a class="title" data-toggle-wrap="#regForm" href="#">реєстрація на акцію</a>
+            <form novalidate action="" id="regForm">
+              <div class="field">
+                <label for="form-name">ПІ</label>
+                <input type="text" name="name" id="form-name">
+              </div>
+              <div class="field">
+                <label for="form-date">Дата народження</label>
+                <input type="date" name="date" id="form-date">
+              </div>
+              <div class="field">
+                <label for="form-gender">Стать</label>
+                <select name="gender" id="form-gender">
+                  <option value="1">Чоловіча</option>
+                  <option value="2">Жіноча</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="form-region">Область, населений пункт</label>
+                <input type="text" name="region" id="form-region">
+              </div>
+              <div class="field">
+                <label for="form-email">Електронна адреса</label>
+                <input type="email" name="email" id="form-email">
+              </div>
+              <div class="field">
+                <label for="form-phone">Контактний номер</label>
+                <input type="text" name="phone" id="form-phone">
+              </div>
+              <div class="field">
+                <label for="form-code">Акційний код</label>
+                <input type="text" name="code" id="form-code">
+              </div>
+
+              <input class="btn" type="submit" value="Зареєструватись">
+            </form>
+          </li>
+          <li class="toggle">
+            <a class="title" data-toggle-wrap="#officialRules" href="#">офіційні правила акції</a>
+            <div class="toggle_wrap" id="officialRules">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda consequuntur harum magni, minima
+                optio porro possimus, qui quod repellendus, repudiandae saepe voluptatem voluptates! Cum ipsa porro quae
+                suscipit voluptate. Aliquam aperiam cum, doloremque eius et expedita hic incidunt inventore ipsum
+                molestias mollitia nesciunt placeat praesentium quasi recusandae unde ut! Accusantium alias aliquam
+                aliquid deserunt, dignissimos doloremque ducimus, eaque eius eos hic id iure laudantium nam neque
+                obcaecati odio, perferendis quae qui ratione reiciendis rerum voluptate voluptatem voluptates. Accusamus
+                blanditiis consequuntur doloremque id incidunt officia quia, ullam. Adipisci, aliquam animi aperiam
+                architecto autem incidunt ipsum necessitatibus possimus, quos voluptas voluptatum?
+            </div>
+          </li>
+          <li>
+            <p class="title">діліться враженнями</p>
+            <div class="content">
+              <img src="./src/img/facebook.png" alt="facebook" class="facebook">
+              <a href="#" class="content_text">
+                <p>Обговорюйте і розповідайте друзям про акцію</p>
+                <p class="content_text__bold">«Купуй сардельки – вигравай Iphone 11 Pro Max»</p>
+                <p>в соціальних мережах. Висловлюйте свої коментарі та пропозиції.</p>
+              </a>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </section>
 </main>
 
-<script src="src/js/pageable.min.js"></script>
+<!--<script src="src/js/pageable.min.js"></script>-->
+<script src="src/js/fullpage.min.js"></script>
 <script src="src/js/index.js"></script>
 </body>
 </html>

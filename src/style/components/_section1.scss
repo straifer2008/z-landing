@@ -27,10 +27,10 @@
       z-index: 1;
       .toggle {
         &_sale {
-          animation: 1.8s linear infinite fadeIn;
+          animation: 2s infinite fadeIn step-end;
         }
         &_by {
-          animation: 1.8s linear infinite fadeOut;
+          animation: 2s infinite fadeOut step-end;
         }
       }
     }
@@ -69,13 +69,13 @@
       left: 10vw;
       bottom: 100vh;
       animation-fill-mode: backwards;
-      animation: 1.4s ease-in-out infinite sausageAnimationLeft;
+      animation: 2s infinite sausageAnimationLeft step-start;
     }
     &__right {
       right: 10vw;
       bottom: calc(100vh + 500px);
       animation-fill-mode: backwards;
-      animation: 1.8s ease-in-out infinite sausageAnimationRight;
+      animation: 2s infinite sausageAnimationRight step-end;
     }
   }
 }
@@ -135,22 +135,28 @@
 @keyframes fadeIn {
   0% {
     opacity: 1;
+    visibility: visible;
   }
   50% {
     opacity: 0;
+    visibility: hidden;
   }
   100% {
     opacity: 1;
+    visibility: visible;
   }
 }
 @keyframes fadeOut {
   0% {
     opacity: 0;
+    visibility: hidden;
   }
-  40% {
+  50% {
     opacity: 1;
+    visibility: visible;
   }
   100% {
     opacity: 0;
+    visibility: hidden;
   }
 }

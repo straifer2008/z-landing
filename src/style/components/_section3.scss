@@ -34,6 +34,9 @@
     padding: 0 130px;
     max-height: calc(100vh - 230px);
     overflow: hidden;
+    @media screen and (max-width: $md){
+      padding: 0 60px;
+    }
     @media screen and (max-width: $sm){
       padding: 0 20px;
       max-height: calc(100vh - 100px);
@@ -187,14 +190,13 @@
 
     form {
       margin-top: 40px;
-      max-width: 60vw;
+      max-width: 680px;
       flex-wrap: wrap;
       display: none;
       min-height: calc(100vh - 200px);
-      @media screen and (max-width: $sm){
+      @media screen and (max-width: $md){
         max-width: initial;
         justify-content: space-between;
-        min-height: 100vh;
       }
 
       //height: calc(100vh - 403px);
@@ -220,14 +222,13 @@
       }
 
       .field {
-        //display: flex;
-        //flex-direction: column;
-        //align-items: flex-start;
+        display: flex;
+        flex-direction: column;
         margin: 8px;
-        max-width: 200px;
+        max-width: 30%;
+        width: 100%;
         @media screen and (max-width: $sm){
-          display: flex;
-          flex-direction: column;
+          max-width: 50%;
           width: calc(50% - 20px);
         }
         label {

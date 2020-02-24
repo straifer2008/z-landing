@@ -187,13 +187,22 @@
 
     form {
       margin-top: 40px;
+      max-width: 60vw;
+      flex-wrap: wrap;
       display: none;
-      grid-template-columns: repeat(3, 1fr);
-      height: calc(100vh - 403px);
-      grid-row-gap: 60px;
-      grid-column-gap: 60px;
-      align-content: start;
-      @media screen and (max-width: $lg){
+      min-height: calc(100vh - 200px);
+      @media screen and (max-width: $sm){
+        max-width: initial;
+        justify-content: space-between;
+        min-height: 100vh;
+      }
+
+      //height: calc(100vh - 403px);
+      //grid-template-columns: repeat(3, 1fr);
+      //grid-row-gap: 60px;
+      //grid-column-gap: 60px;
+      //align-content: start;
+      /*@media screen and (max-width: $lg){
         grid-template-columns: repeat(2, 1fr);
         grid-row-gap: 20px;
         grid-column-gap: 20px;
@@ -201,33 +210,37 @@
 
       @media screen and (max-width: $sm){
         height: calc(100vh - 200px);
-      }
+      }*/
 
       &.active {
-        display: grid;
+        display: flex;
+        min-height: initial;
+        max-height: 90vh;
+        padding-bottom: 100vh;
       }
 
       .field {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: space-between;
+        //display: flex;
+        //flex-direction: column;
+        //align-items: flex-start;
+        margin: 8px;
+        max-width: 200px;
+        @media screen and (max-width: $sm){
+          display: flex;
+          flex-direction: column;
+          width: calc(50% - 20px);
+        }
         label {
+          display: block;
           text-transform: uppercase;
           margin-bottom: 10px;
-          font-size: 50px;
-          @media screen and (max-width: 1400px){
-            font-size: 40px;
-          }
-          @media screen and (max-width: 980px){
-            font-size: 30px;
-          }
+          font-size: 28px;
           @media screen and (max-width: $xs){
             font-size: 16px;
           }
         }
 
-        input, select {
+        input:not(.btn), select {
           -webkit-appearance: none;
           width: 100%;
           background-color: #fff;
@@ -236,7 +249,7 @@
           border: none;
           box-sizing: border-box;
           border-radius: 20px;
-          padding: 10px;
+          padding: 10px 20px;
           height: 40px;
           display: flex;
           align-items: center;
@@ -249,6 +262,7 @@
 
       .btn {
         align-self: flex-end;
+        margin: 10px;
         @media screen and (max-width: $xs){
           font-size: 16px;
           height: 30px;
@@ -269,8 +283,9 @@
     text-align: center;
     font-size: 30px;
     width: 90%;
-    @media screen and (max-width: 768px){
+    @media screen and (max-width: $sm){
       flex-direction: column;
+      font-size: 18px;
     }
     a {
       text-decoration: none;

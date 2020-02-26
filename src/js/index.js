@@ -45,8 +45,23 @@ function toggleClass(trigger, toggleClassName) {
   }
 }
 
+function scrollInBlock() {
+  const wrap = document.getElementById('blockWithScroll');
+  const prev = document.getElementById('scrollBtnPrev');
+  const next = document.getElementById('scrollBtnNext');
+
+  next.addEventListener('click', function () {
+    wrap.scrollBy(0, 100);
+  });
+
+  prev.addEventListener('click', function () {
+    wrap.scrollBy(0, -100);
+  });
+}
+
 // Document ready function
 document.addEventListener("DOMContentLoaded", function() {
   toggleClass('[data-toggle-wrap]');
   toggleClass('[data-toggle-class]');
+  scrollInBlock();
 });
